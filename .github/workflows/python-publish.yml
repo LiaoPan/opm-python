@@ -1,0 +1,66 @@
+# This workflow will build and release a Python Package 
+# author: LiaoPan
+
+name: Release Python Package
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+    - name: Install pypa/build
+      run: >-
+        python -m
+        pip install
+        build
+        --user
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Build a binary wheel and a source tarball
+      run: >-
+        python -m
+        build
+        --sdist
+        --wheel
+        --outdir dist/
+        .
+    - name: Get version number
+      id: get_version
+      run: |
+        version=$(grep "__version__" opm/_version.py | cut -d "'" -f 2)
+        echo "version=$version" >> $GITHUB_ENV
+    - name: Print Version Number
+      run: echo "The version number is ${{ env.version }}"
+    - name: Create GitHub Release
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: >-
+        gh release create
+        'v${{ env.version }}'
+        --repo '${{ github.repository }}'
+        --notes "[Github Actions Workflow]Change Logs:"
+        --draft
+        --title 'v${{ env.version }}'
+    - name: Upload GitHub Binary Release
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: >-
+        gh release upload 'v${{ env.version }}'
+        'dist/${{ github.event.repository.name }}-${{ env.version }}-py3-none-any.whl'
+        --clobber
