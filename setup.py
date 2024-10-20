@@ -20,7 +20,7 @@ if version is None:
     raise RuntimeError('Could not determine version')
 
 VERSION = version
-DISTNAME = "opm"
+DISTNAME = "opmpy"
 DESCRIPTION = "Processing tool for OPM-MEG."
 MAINTAINER = "liaopan"
 MAINTAINER_EMAIL = "liaopanblog@gmail.com"

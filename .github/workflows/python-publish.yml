@@ -47,16 +47,16 @@ jobs:
         echo "version=$version" >> $GITHUB_ENV
     - name: Print Version Number
       run: echo "The version number is ${{ env.version }}"
-    - name: Create GitHub Release
-      env:
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      run: >-
-        gh release create
-        'v${{ env.version }}'
-        --repo '${{ github.repository }}'
-        --notes "[Github Actions Workflow]Change Logs:"
-        --draft
-        --title 'v${{ env.version }}'
+#    - name: Create GitHub Release
+#      env:
+#        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#      run: >-
+#        gh release create
+#        'v${{ env.version }}'
+#        --repo '${{ github.repository }}'
+#        --notes "[Github Actions Workflow]Change Logs:"
+#        --draft
+#        --title 'v${{ env.version }}'
 #    - name: Upload GitHub Binary Release
 #      env:
 #        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
