@@ -57,10 +57,21 @@ jobs:
         --notes "[Github Actions Workflow]Change Logs:"
         --draft
         --title 'v${{ env.version }}'
-    - name: Upload GitHub Binary Release
-      env:
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      run: >-
-        gh release upload 'v${{ env.version }}'
-        'dist/opm-${{ env.version }}-py3-none-any.whl'
-        --clobber
+#    - name: Upload GitHub Binary Release
+#      env:
+#        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#      run: >-
+#        gh release upload 'v${{ env.version }}'
+#        'dist/opm-${{ env.version }}-py3-none-any.whl'
+#        --clobber
+    - name: Create GitHub Release
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        tag: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+        files: |
+          dist/*.whl
+          dist/*.tar.gz
