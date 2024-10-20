@@ -10,7 +10,7 @@ conda/outdir/
 opm.egg-info/
 dist/
 build/
-#docs/build/
+docs/build/
 README_private.md
 .vscode
 **/.DS_Store

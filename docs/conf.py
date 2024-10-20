@@ -14,7 +14,7 @@ import os
 import sys
 
 curdir = os.path.dirname(__file__)
-sys.path.insert(0,os.path.abspath(os.path.join("..", "..")))
+sys.path.insert(0, os.path.abspath(os.path.join("", "..")))
 
 import opm
 release = opm.__version__
@@ -27,13 +27,13 @@ def run_apidoc(app):
         better_apidoc.main([
             'better-apidoc',
             '-t',
-            os.path.join('.', 'source', '_templates'),
+            os.path.join('source', 'source', '_templates'),
             '--force',
             '--no-toc',
             '--separate',
             '-o',
-            os.path.join('.', 'source', 'apis'),
-            os.path.join('..', 'opm'),
+            os.path.join('source', 'source', 'apis'),
+            os.path.join('', 'opm'),
         ])
     except Exception as e:
         print(e)
@@ -41,7 +41,7 @@ def run_apidoc(app):
 
 # -- Project information -----------------------------------------------------
 
-project = 'opmpy'
+project = 'opm-python'
 copyright = '2024, LiaoPan'
 author = 'LiaoPan'
 
