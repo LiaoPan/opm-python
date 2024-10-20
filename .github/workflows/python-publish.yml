@@ -43,7 +43,7 @@ jobs:
     - name: Get version number
       id: get_version
       run: |
-        version=$(grep "__version__" opm/_version.py | cut -d "'" -f 2)
+        version=$(grep "__version__" opmpy/_version.py | cut -d "'" -f 2)
         echo "version=$version" >> $GITHUB_ENV
     - name: Print Version Number
       run: echo "The version number is ${{ env.version }}"
@@ -62,8 +62,9 @@ jobs:
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: >-
         gh release upload 'v${{ env.version }}'
-        'dist/opm-${{ env.version }}-py3-none-any.whl'
+        'dist/opmpy-${{ env.version }}-py3-none-any.whl'
         --clobber
+
 #    - name: Create GitHub Release
 #      uses: ncipollo/release-action@v1
 #      with:
