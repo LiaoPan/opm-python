@@ -62,5 +62,5 @@ jobs:
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: >-
         gh release upload 'v${{ env.version }}'
-        'dist/${{ github.event.repository.name }}-${{ env.version }}-py3-none-any.whl'
+        'dist/opm-${{ env.version }}-py3-none-any.whl'
         --clobber
