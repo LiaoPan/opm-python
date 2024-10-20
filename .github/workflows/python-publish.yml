@@ -68,10 +68,8 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
-#        tag: ${{ github.ref }}
-#        name: Release ${{ github.ref }}
         tag: ${{ github.ref_name }}
-        name: Release ${{ github.ref_name }}
+        name: 'v${{ env.version }}'
         draft: false
         prerelease: false
         files: |
