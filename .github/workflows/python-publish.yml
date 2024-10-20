@@ -47,31 +47,31 @@ jobs:
         echo "version=$version" >> $GITHUB_ENV
     - name: Print Version Number
       run: echo "The version number is ${{ env.version }}"
-#    - name: Create GitHub Release
-#      env:
-#        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-#      run: >-
-#        gh release create
-#        'v${{ env.version }}'
-#        --repo '${{ github.repository }}'
-#        --notes "[Github Actions Workflow]Change Logs:"
-#        --draft
-#        --title 'v${{ env.version }}'
-#    - name: Upload GitHub Binary Release
-#      env:
-#        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-#      run: >-
-#        gh release upload 'v${{ env.version }}'
-#        'dist/opm-${{ env.version }}-py3-none-any.whl'
-#        --clobber
     - name: Create GitHub Release
-      uses: ncipollo/release-action@v1
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-        tag: ${{ github.ref_name }}
-        name: v${{ env.version }}
-        draft: false
-        prerelease: false
-        files: |
-          dist/*.whl
-          dist/*.tar.gz
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: >-
+        gh release create
+        'v${{ env.version }}'
+        --repo '${{ github.repository }}'
+        --notes "[Github Actions Workflow]Change Logs:"
+        --draft
+        --title 'v${{ env.version }}'
+    - name: Upload GitHub Binary Release
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: >-
+        gh release upload 'v${{ env.version }}'
+        'dist/opm-${{ env.version }}-py3-none-any.whl'
+        --clobber
+#    - name: Create GitHub Release
+#      uses: ncipollo/release-action@v1
+#      with:
+#        token: ${{ secrets.ACCESS_TOKEN }}
+#        tag: ${{ github.ref_name }}
+#        name: Release ${{ github.ref_name }}
+#        draft: false
+#        prerelease: false
+#        files: |
+#          dist/*.whl
+#          dist/*.tar.gz
