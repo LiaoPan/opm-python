@@ -8,9 +8,9 @@
 import os
 import mne
 import numpy as np
-from opm.coregistration import gen_bem_from_anat, get_face_from_anat, run_freesurfer
-from opm.coregistration import get_trans_fif, trans_point_cloud_data
-from opm.source_imaging import lcmv
+from opmpy.coregistration import gen_bem_from_anat, get_face_from_anat, run_freesurfer
+from opmpy.coregistration import get_trans_fif, trans_point_cloud_data
+from opmpy.source_imaging import lcmv
 
 
 class OPM(object):

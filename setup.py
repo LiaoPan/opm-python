@@ -11,7 +11,7 @@ from distutils.extension import Extension
 
 # get the version
 version = None
-with open(op.join('opm', '_version.py'), 'r') as fid:
+with open(op.join('opmpy', '_version.py'), 'r') as fid:
     for line in (line.strip() for line in fid):
         if line.startswith('__version__'):
             version = line.split('=')[1].strip().strip('\'')

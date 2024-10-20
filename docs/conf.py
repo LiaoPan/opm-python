@@ -16,8 +16,8 @@ import sys
 curdir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.abspath(os.path.join("", "..")))
 
-import opm
-release = opm.__version__
+import opmpy
+release = opmpy.__version__
 
 def run_apidoc(app):
     """Generage API documentation"""
