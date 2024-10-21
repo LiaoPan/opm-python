@@ -33,7 +33,7 @@ def run_apidoc(app):
             '--separate',
             '-o',
             os.path.join('source', 'source', 'apis'),
-            os.path.join('', 'opm'),
+            os.path.join('', 'opmpy'),
         ])
     except Exception as e:
         print(e)
@@ -70,7 +70,7 @@ extensions = [
 #     "colon_fence"
 # ]
 
-autosummary_generate = False
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
