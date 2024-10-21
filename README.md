@@ -7,7 +7,7 @@ OPM-Python is an analysis tool for OPM-MEG.
 [//]: # ([![Documentation]&#40;https://readthedocs.org/projects/opm-python/badge/?version=latest&#41;]&#40;https://opm-python.readthedocs.io/&#41;)
 [![PyPI Versions](https://img.shields.io/pypi/pyversions/opmqc.svg?color)](https://pypi.python.org/pypi/opm-python?color=deepgreen)
 [![PyPI License](https://img.shields.io/pypi/l/opmqc.svg?color)](LICENSCE.md)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/opm-python)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/opmpy)
 
 ## Installation
 ```bash
