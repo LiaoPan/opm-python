@@ -20,8 +20,7 @@ Download the `opm-python-<verion>-py3-none-any.whl` installation file from [Rele
 pip install opmpy-<verion>-py3-none-any.whl
 ```
 
-## [Get Started]()
-
+## [Get Started](https://opm-python.readthedocs.io/en/latest/)
 
 ## Bug reports
 Please use the [GitHub issue tracker](https://github.com/LiaoPan/opm-python/issues) to report bugs.
