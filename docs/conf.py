@@ -27,13 +27,13 @@ def run_apidoc(app):
         better_apidoc.main([
             'better-apidoc',
             '-t',
-            os.path.join('source', 'source', '_templates'),
+            os.path.join('.', '_templates'),
             '--force',
             '--no-toc',
             '--separate',
             '-o',
-            os.path.join('source', 'source', 'apis'),
-            os.path.join('', 'opmpy'),
+            os.path.join('.',  'apis'),
+            os.path.join('..', 'opmpy'),
         ])
     except Exception as e:
         print(e)
