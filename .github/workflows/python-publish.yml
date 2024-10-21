@@ -70,7 +70,7 @@ jobs:
 #      with:
 #        token: ${{ secrets.ACCESS_TOKEN }}
 #        tag: ${{ github.ref_name }}
-#        name: Release ${{ github.ref_name }}
+#        name: v${{ env.version }}
 #        draft: false
 #        prerelease: false
 #        files: |

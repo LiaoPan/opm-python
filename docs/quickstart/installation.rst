@@ -8,13 +8,13 @@ You can install `OPM-Python` by PyPI:
 
 .. code-block:: bash
 
-   pip install opm-python
+   pip install opmpy
 
 You can update the latest `OPM-Python`:
 
 .. code-block:: bash
 
-    pip install -U opm-python
+    pip install -U opmpy
 
 
 Installation from source code:

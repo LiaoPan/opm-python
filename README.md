@@ -11,13 +11,13 @@ OPM-Python is an analysis tool for OPM-MEG.
 
 ## Installation
 ```bash
-pip install opm-python
+pip install opmpy
 ```
 
 ### Local/Offline Installation
 Download the `opm-python-<verion>-py3-none-any.whl` installation file from [Releases](https://github.com/LiaoPan/opm-python/releases) for offline installation.
 ```bash
-pip install opm_python-<verion>-py3-none-any.whl
+pip install opmpy-<verion>-py3-none-any.whl
 ```
 
 ## [Get Started]()
