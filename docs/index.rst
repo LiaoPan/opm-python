@@ -112,7 +112,7 @@ Features
    tutorial/preprep.rst
    tutorial/coregistration.rst
    tutorial/source_imaging.rst
-   apis/opm-python.rst
+   apis/opmpy.rst
 ..   tutorial/example_opm.rst
 
 
