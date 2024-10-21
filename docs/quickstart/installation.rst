@@ -28,7 +28,7 @@ Local/Offline Installation：
 
 .. code-block:: bash
 
-    pip install opm_python-<verion>-py3-none-any.whl
+    pip install opmpy-<verion>-py3-none-any.whl
 
 
 Dependency
